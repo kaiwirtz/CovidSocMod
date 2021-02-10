@@ -1,0 +1,129 @@
+# Parameter file for XSiSi 2.0
+# coefficients of the Integrated Covid19 Social
+#                  and Epidemiological Model
+comment epidemiological coefficients
+float	beta_max	 3.4
+	\u 1/d
+	\r 0.05:4
+	\d initial transmission rate
+	\v
+float	recov	 0.08
+	\u 1/d
+	\r 0.05:4
+	\d recovery rate
+	\v
+float mort 0.15
+	\u 1/d
+	\r 0.05:4
+	\d  probability of mortality upon infection of oldest age-class
+	\v
+float	sub_beta	 0.5
+	\u 1/d
+	\r 0.01:0.5
+	\d fraction of subsistence contact rates
+	\v
+comment social parameters
+float social 7.81e-06
+	\u 1/d
+	\r 0.05:4
+	\d inverse mitigation readiness
+	\v
+float catchup 40
+   \u
+   \r 0:1
+   \d upper limit of (inverse) readiness decline
+   \v
+float  acc_catch 0.013
+   \u
+   \r 0:1
+   \d readiness degradation rate
+   \v
+float	tlag  -11
+	\u d
+	\r -20:10
+	\d 	expectation time lag; >0: retrospection
+	\v
+float	flexibility 1700
+	\u -
+	\r 1500
+	\d specific flexibility of societal regulation of transmission rates
+	\v
+comment exposure regulation
+float	behave 1.6
+	\u 1/d
+	\r 0.0:0.06
+	\d sensitivity of behavioral learning
+	\v
+float	behave_rate	 0.05
+	\u 1/d
+	\r 0.05:4
+	\d 105
+	\v
+comment seasonality
+float	temp_ampl	 0.2
+	\u 1/^oC
+	\r 0.0:0.05
+	\d exposition decrease per degree Celsius
+	\v
+float	weekampl_sub	 0.0
+	\u 1/d
+	\r 0.05:4
+	\d 0.25
+	\v
+float	week_ampl	 0.
+	\u -
+	\r 0.0:0.3
+	\d amplitude of weekly mobility oscillation
+	\v
+float sun_ampl 0.2
+   \u
+   \r 0:1
+   \d NOT USED
+   \v
+float	temp_width	 5.
+	\u -
+	\r 0.0:0.3
+	\d temperature range of nearly  amplitude of yearly mobility oscillation
+	\v
+comment age-specific epidemiological coefficients
+float q10_fatal 3.
+	\u
+	\r 0.:1.
+	\d case fatality increase with age
+	\v
+array attack
+  \d age specific attack rates
+  \u -
+  typeOfArray float
+  dimension 7
+  data
+	    0.35 0.5 0.5 0.5 1 1 1
+  end
+comment external input
+float relaxs 1.5E-4
+   \u
+   \r 0:1
+   \d 3E-41.5
+   \v
+float travel 0.35
+   \u
+   \r 0:1
+   \d travel coefficient
+   \v
+float DecStart -8E3
+   \u
+   \r 0:1
+   \d enforced start day of decline
+   \v
+comment dummy parameters
+float parvar1 0.35
+   \u
+   \r 0:1
+   \d
+   \v
+float parvar2 -8E3
+   \u
+   \r 0:1
+   \d
+   \v
+   \d

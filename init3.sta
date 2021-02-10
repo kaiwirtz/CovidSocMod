@@ -1,0 +1,56 @@
+# Parameter file written by XSiSi 2.0
+array	Conc
+	\d age distribution infected people
+	\u Ind/km2
+	typeOfArray	float
+	dimension	7 1
+data
+   0.188  0.142  0.297  0.142   0.095  0.079  0.06
+end
+comment 0.176 0.134 0.298 0.147 0.099 0.083 0.064
+comment transmission matrix
+comment 1:'0-19','20-29','30-49','50-59','60-69','70-79','80-99'}
+array	trans
+	\d 1E-4 5
+	\u 1/d
+	typeOfArray	float
+	dimension	7  7
+data
+        1.000 0.000 0.000 0.000 0.000 0.000 0.000
+        0.178 0.404 0.000 0.000 0.000 0.000 0.000
+        0.331 0.380 0.504 0.000 0.000 0.000 0.000
+        0.089 0.117 0.156 0.315 0.000 0.000 0.000
+        0.040 0.062 0.065 0.126 0.301 0.000 0.000
+        0.026 0.022 0.030 0.035 0.119 0.259 0.000
+        0.014 0.011 0.013 0.013 0.023 0.081 0.231
+
+end
+comment cumulative transmission rate
+comment exponential epidemic imprint
+array	aRtrans
+	\d accumulated age-specific transmission
+	\u -
+	typeOfArray	float
+	dimension	7 1
+data
+   0.0 0.0 0.0 0.0 0.0 0.0 0.0
+end
+
+array	exposition
+	\u -
+	\r 0:1
+	\d exposition
+	typeOfArray	float
+	dimension	1
+data
+   1.
+end
+array	CostAcc
+	\u -
+	\r 0:1
+	\d accumulated social costs
+	typeOfArray	float
+	dimension	1
+data
+   0.
+end

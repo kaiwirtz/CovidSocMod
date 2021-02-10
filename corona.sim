@@ -1,0 +1,335 @@
+# Simulation file written by XSiSi 2.0
+# Last modified at Sat Sep 08 11:11:49 CEST 2012
+
+string	SimulationName	"Corona regulation"
+				\d (Only for information!)
+string	ModelName	"Integrated Covid19 Social and Epidemiological Model"
+				\d (Only for information!)
+string	ModelPath	"/home/wirtz/prog/corona/corona.prg"
+				\d The path of the executable model.
+float	Time     	0.0			\d Actual simulated Time.
+	     	         				\u days
+	     	         				\o #written to output
+float	TimeStart	0.0			\d Start of simulation.
+float	TimeEnd   490.01	\d End of simulation time 385
+float	TimeStep  0.01 	  \d TimeStep of simulation
+float	OutputStep 0.5		\d TimeStep of output (results)
+int	RandomInit 	1				\d 0:
+list	IncludeFiles			\d List of all included files
+	type	string
+data
+	"init3.sta"
+	"control.ctl"
+	"region.par"
+	"ForcConst.dat"
+	"model.par"
+	"fatalmobil_smooth.dat"
+end
+
+list	OutputVariables
+	type	parameter
+data
+	 result	TotConc
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Conc1
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Conc2
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Conc3
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Conc4
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Conc5
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Conc6
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Conc7
+		 type	float
+		 active	true
+		 precision	 3
+	 result	lim0
+			 type	float
+			 active	true
+			 precision	 3
+	 result	lim1
+			 type	float
+			 active	true
+			 precision	 3
+   result	lim2
+			 type	float
+			 active	true
+			 precision	 3
+	 result	MeanTrans
+	 		 type	float
+	 		 active	true
+	 		 precision	 3
+	 result	Mtrans1
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Mtrans2
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Mtrans3
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Mtrans4
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Mtrans5
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Mtrans6
+		 type	float
+		 active	true
+		 precision	 3
+	 result	Mtrans7
+		 type	float
+		 active	true
+		 precision	 3
+result	trans11
+	type	float
+	active	true
+	precision	 3
+result	trans12
+	type	float
+	active	true
+	precision	 3
+result	trans13
+	type	float
+	active	true
+	precision	 3
+result	trans14
+	type	float
+	active	true
+	precision	 3
+result	trans15
+	type	float
+	active	true
+	precision	 3
+result	trans16
+	type	float
+	active	true
+	precision	 3
+result	trans17
+	type	float
+	active	true
+	precision	 3
+result	trans22
+	type	float
+	active	true
+	precision	 3
+result	trans23
+	type	float
+	active	true
+	precision	 3
+result	trans24
+	type	float
+	active	true
+	precision	 3
+result	trans25
+	type	float
+	active	true
+	precision	 3
+result	trans26
+	type	float
+	active	true
+	precision	 3
+result	trans27
+	type	float
+	active	true
+	precision	 3
+result	trans33
+	type	float
+	active	true
+	precision	 3
+result	trans34
+	type	float
+	active	true
+	precision	 3
+result	trans35
+	type	float
+	active	true
+	precision	 3
+result	trans36
+	type	float
+	active	true
+	precision	 3
+result	trans37
+	type	float
+	active	true
+	precision	 3
+result	trans44
+	type	float
+	active	true
+	precision	 3
+result	trans45
+	type	float
+	active	true
+	precision	 3
+result	trans46
+	type	float
+	active	true
+	precision	 3
+result	trans47
+	type	float
+	active	true
+	precision	 3
+result	trans55
+	type	float
+	active	true
+	precision	 3
+result	trans56
+	type	float
+	active	true
+	precision	 3
+result	trans57
+	type	float
+	active	true
+	precision	 3
+result	trans66
+	type	float
+	active	true
+	precision	 3
+result	trans67
+	type	float
+	active	true
+	precision	 3
+result	trans77
+	type	float
+	active	true
+	precision	 3
+result	fatal
+	type	float
+	active	true
+	precision	 3
+result	SocialCosts
+	type	float
+	active	true
+	precision	 3
+result	Contact
+	type	float
+	active	true
+	precision	 3
+result	Mobility
+	type	float
+	active	true
+	precision	 3
+result	InfectAge
+	type	float
+	active	true
+	precision	 3
+result	DeathAge
+	type	float
+	active	true
+	precision	 3
+result TotSusc
+	type	float
+	active	true
+	precision	 3
+result TotRecov
+	type	float
+	active	true
+	precision	 3
+result aRtrans1
+	type	float
+	active	true
+	precision	 3
+result aRtrans2
+	type	float
+	active	true
+	precision	 3
+result aRtrans3
+	type	float
+	active	true
+	precision	 3
+result aRtrans4
+	type	float
+	active	true
+	precision	 3
+result aRtrans5
+	type	float
+	active	true
+	precision	 3
+result aRtrans6
+	type	float
+	active	true
+	precision	 3
+result aRtrans7
+	type	float
+	active	true
+	precision	 3
+result	exposition
+	type	float
+	active	true
+	precision	 3
+result	ExpoEff
+	type	float
+	active	true
+	precision	 3
+result	fac
+	type	float
+	active	true
+	precision	 3
+result	CostAcc
+	type	float
+	active	true
+	precision	 3
+result	Exposure
+	type	float
+	active	true
+	precision	 3
+end
+
+list	VariationVariables
+	type	parameter
+data
+result	beta_max
+		type	float
+		\r 2.5:6
+		active	true
+		precision	15
+result  tlag
+			type	float
+			\r -23:-3
+			active	true
+			precision	9
+result social
+			type	float
+			\r 4E-6:9E-5
+			active	true
+			precision	18
+result  acc_catch
+		type	float
+		\r 0.0055:0.05
+		active	true
+		precision	9
+result  relaxs
+		type	float
+		\r 0E-4:12E-4
+		active	true
+		precision	6
+result  parvar2
+		type	float
+		\r 120:280
+		active	true
+		precision	6
+	end

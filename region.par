@@ -1,0 +1,87 @@
+comment regional population characteristics of total population size
+float   InfectDens  1E-4
+        \u -
+        \d initial density of infected people
+				\v
+array 	age_dist
+				\d age distribution
+        typeOfArray float
+				dimension 7
+				data
+         0.1879 0.1416 0.2970 0.1418 0.0945 0.0785 0.0598
+				end
+comment	NOT USED (Hamburg 2018) 0.176 0.134 0.298 0.147 0.099 0.083 0.064
+float   init_age  -54
+        \u yr
+        \d >0 median age of initial infected; <0 use age-dist (from file)
+				\v
+float   m_age  -0.8
+        \u yr
+        \d normalized mean age (<0: not used)
+        \r 0:1
+				\v
+array med_ages
+  \d median ages; regional (1st: AVG)  (NOT USED)
+  \u -
+  typeOfArray float
+  dimension 21
+  data
+    40.54 41.60 41.70 47.80 31.70 37.80 46.50 42.80 42.6 43.90 41.10 42.70 40.60 36.80 37.8 37.3 39.5 39.8 40. 39 37.7
+  end
+comment 0: AVG 1:Belgium 2:France 3:Germany 4:Iran 5:Ireland 6:Italy 7:Netherlands 8:Portugal 9:Spain 10:Sweden 11:Switzerland 12:United Kingdom 13:Georgia 14:Indiana 15:Louisiana 16:Massachusetts 17:Michigan 18:New Jersey 19:New York 20:Washington
+array temp_min
+  \d regional yearly minimum temperature (1st: AVG)
+  \u -
+  typeOfArray float
+  dimension 21
+  data
+    5.5 3.8 5.0 1.6 6.1 5.7 6.6 3.8 10.2 7.6 -7.3 -0.9 4.4   9.4 -1 11.3 -2.7 -5.5 0.0 -4.1	2.8
+  end
+array temp_max
+  \d regional yearly max temperature (1st: AVG)
+  \u -
+  typeOfArray float
+  dimension 21
+  data
+   19.6 18.3 19.5 18.2 31.2 14.9 23.4 17.8 22.7 23.2 13.7 14.8 15.1 26.3 22.6	27.6 20.4 19.6 22.6 20.0 18.3
+  end
+array latitude
+  \d region latitude (1st: AVG)
+  \u degrees North
+  typeOfArray float
+  dimension 21
+  data
+   44.3 50.5 46. 51. 32. 53 42.5 52.3 39.3 40 62 47 54 33.2 40.3 30.4 42.4 44.2 39.8 43.0 47.8
+  end
+array excessm
+  \d excess mortality (1st: AVG1.32 )
+  \u -
+  typeOfArray float
+  dimension 21
+  data
+    1.0 1.04 1.08 1.03 2.5 1.16 1.33 1.25 1.1 1.25 1.03 1.25 1.24 1.4 1.4 1.4 1.36 1.22 1.8 1.14 1.4
+  end
+array houseold
+  \d percentage of elderly in intergenerational households
+  \u -
+  typeOfArray float
+  dimension 21
+  data
+    8.32  7.275 6.275 3.175 30 12.775 15.275 2.725 16.7500 20.6 1.6 7 6.9250 7 7 7 7 7 7 7 7
+  end
+comment 0: AVG 1:Belgium 2:France 3:Germany 4:Iran 5:Ireland 6:Italy 7:Netherlands 8:Portugal 9:Spain 10:Sweden 11:Switzerland 12:United Kingdom 13:Georgia 14:Indiana 15:Louisiana 16:Massachusetts 17:Michigan 18:New Jersey 19:New York 20:Washington
+float   time_shut  -10
+  \u d
+  \d duration of forced lock-down
+  \r -1:100
+	\v
+float   period_vacc  -40
+  \u d
+  \d duration of vaccination <0: no vacc >0 start Dec, 15 2020
+  \r -1:100
+	\v
+float  vacc_frac   1.0
+  \u -
+  \d vaccination efficacy & fraction of people willing to be vaccinated
+  \r 0:1
+	\v

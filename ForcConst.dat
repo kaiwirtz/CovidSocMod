@@ -1,0 +1,16 @@
+comment imposed abrupt changes in system parameters
+array ForcData
+  typeOfArray float
+ dimension 6 3
+head
+	"Time"
+	"social"
+	"HCap0"
+data
+	0   1 1
+  14  1 1
+  15  0 1
+  43  0 1
+  44  1 1
+ 399  1 1
+end

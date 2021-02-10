@@ -1,0 +1,34 @@
+/*-------------------------------------------------------*/
+/*  Integrated Covid19 Social and Epidemiological Model  */
+/*-------------------------------------------------------*/
+
+The CovidSocMod code requires the package SiSi2.0. This package enables efficient management of simulations and numerical experiments by using a suite of formatted control files similar to a markup structure. SiSi2.0 facilitates file input and output operations. The software is available as an external part of the CovidSocMod package and needs to be compiled beforehand.
+
+
+Installation:
+-------------
+Unpack SiSi2.0.tgz somewhere - preferably in the same subdirectory SiSi2.0 where the CovidSocMod sources lay. Build the library using "make lib", which should generate libsisi.a.
+
+Adjust in the "Makefile" of CovidSocMod SISSIPATH to the directory where SiSi2.0 has been installed (if not the default location). The freshly generated "libsisi.a" should be in SISSIPATH/lib.
+Adjust in "corona.sim" the ModelPath to the directory of the CovidSocMod sources.
+If you keep	the relative path of result files (e.g., MovieResFile	"res/Res.outb") you need to create the corresponding directory (e.g., by "mkdir res").
+
+Type "make" to compile and execute the model.
+"make corona" only compiles; "make run" only executes.
+
+Specific numeric experiments can be created by transforming "corona.sim" into new "*.sim" files which in turn link to  different control files. For example, you can switch from a single simulation to a systematic variation by changing the switch AnalysisType in "control.ctl" from 0 to 1. Or you can use an alternative parametrization by replacing "model.par" by, e.g, "model_new.par" where values of individual parameters were changed.
+
+
+Future availability:
+-------------
+https://github.com/kaiwirtz/CovidSocMod/
+
+LICENSE
+-------
+If not stated otherwise, the entire model software is licensed under
+  the GNU Public License version 3 or later.
+  See <http://www.gnu.org/licenses/gpl-3.0.txt>
+  for the complete terms of the license.
+
+Documentation:
+--------------
